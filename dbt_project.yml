@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'nyc_analytics'
 version: '1.0.0'
 config-version: 2
 
@@ -40,3 +40,20 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+  assignment_work:
+     staging:
+       +materialized: table
+       +schema: nyc_transit_restaurants_staging
+
+     marts:
+       +materialized: table
+       +schema: nyc_transit_restaurants_marts
+      
+       shared:
+         +materialized: table
+
+       open_restaurant_apps:
+         +materialized: table
+
+       dot_311:
+         +materialized: table
