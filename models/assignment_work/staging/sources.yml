@@ -10,6 +10,8 @@ sources:
         description: |
           NYC 311 service requests for Dept of Transportation.
           One row per service request.
+      - name: source_nyc_open_restaurant_apps
+        description: NYC Open Restaurant Applications raw data
         columns:
           - name: unique_key
             description: Unique ID for the service request
