@@ -32,7 +32,9 @@ joined AS (
         AND source.zip = l.zip_code
 
     LEFT JOIN {{ ref('dim_seating_type') }} s
-        ON source.seating_interest_sidewalk = s.seating_interest_sidewalk
+    ON source.seating_interest_sidewalk = s.seating_interest_sidewalk
+   AND source.approved_for_sidewalk_seating = s.approved_for_sidewalk_seating
+   AND source.approved_for_roadway_seating = s.approved_for_roadway_seating
 )
 
 SELECT *
